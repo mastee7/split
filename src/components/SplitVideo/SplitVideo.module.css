@@ -1,0 +1,35 @@
+.splitVideo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+    border: none;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.splitVideo__controls {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    /* Two steps */
+    margin-bottom: calc(var(--split-video-icon-size) * 1);
+    top: calc(var(--split-video-icon-size) * -1);
+
+    width: 100%;
+    z-index: 999;
+}
+
+.fullScreen {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}

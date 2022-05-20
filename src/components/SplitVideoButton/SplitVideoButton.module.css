@@ -1,0 +1,17 @@
+.splitVideoButton {
+    position: relative;
+    top: 0;
+    z-index: 5;
+    margin: 0 1rem;
+    color: var(--font-color);
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.splitVideoButton:hover {
+    top: -2px;
+}
+
+.icon {
+    font-size: var(--split-video-icon-size);
+}

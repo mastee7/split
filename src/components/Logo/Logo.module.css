@@ -1,0 +1,8 @@
+.logo {
+  color: var(--font-color);
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 900;
+  font-size: 1.625rem;
+  cursor: pointer;
+  white-space: nowrap;
+}

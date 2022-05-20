@@ -1,0 +1,166 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  
+  height: var(--navbar-height);
+  padding: 0 2%;
+
+  background-color: var(--fg-color);
+  z-index: 999;
+}
+
+.navbar__menu__icon {
+  margin-right: 3vw;
+  cursor: pointer;
+}
+
+.navbar__section {
+  display: flex;
+
+  align-items: center;
+}
+
+.navbar__link {
+  display: flex;
+  cursor: pointer;
+
+  color: var(--font-color);
+
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 0.875em;
+  font-weight: 700;
+  transition: all 150ms;
+}
+
+@media only screen and (max-width: 760px) {
+  .navbar__link {
+    display: none;
+  }
+}
+
+.navbar__link:hover {
+  color: var(--highlight-color);
+}
+
+.navbar__link__icon {
+  margin-right: 0.5rem;
+}
+
+.navbar__margin {
+  margin-left: 3vw;
+}
+
+/* Center */
+.navbar__center {
+  flex-grow: 0.75;
+  margin: auto 2rem;
+}
+
+.navbar__searchbar {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  height: 2.5rem;
+
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--fg-color);
+
+  border-style: solid;
+  border-width: 0.0625rem;
+  border-color: var(--highlight-color);
+}
+
+@media only screen and (max-width: 760px) {
+  .navbar__searchbar {
+    display: none;
+  }
+}
+
+.navbar__searchbar__icon {
+  padding: 0 0.4rem;
+}
+
+.navbar__searchbar__button {
+  display: flex;
+
+  outline: none;
+  border: none;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--highlight-color);
+  color: var(--font-color);
+
+  border-radius: 0.25rem;
+
+  height: 85%;
+  aspect-ratio: 1/1;
+
+  cursor: pointer;
+}
+
+.navbar__searchbar__input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: none;
+
+  font-size: 0.9rem;
+  color: var(--font-color);
+}
+
+/* Right */
+
+.navbar__login {
+  display: flex;
+
+  align-items: center;
+
+  color: var(--highlight-color);
+
+  padding-left: 0.5rem;
+  padding-right: 0.75rem;
+
+  border-width: 0.0625rem;
+  border-style: solid;
+  border-color: var(--highlight-color);
+  border-radius: 0.25rem;
+
+  height: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+
+  transition: all 150ms;
+}
+
+.navbar__login:hover {
+  background-color: var(--highlight-color);
+  color: white;
+}
+
+@media only screen and (max-width: 760px) {
+  .navbar__login {
+    display: none;
+  }
+}
+
+/* What was overriding it??? I dunno but this is a bandaid fix.
+Figure this out, Noel */
+.navbar__icon {
+  display: none !important;
+}
+
+@media only screen and (max-width: 760px) {
+  .navbar__icon {
+    display: flex !important;
+    margin-right: 5vw;
+    cursor: pointer;
+  }
+}

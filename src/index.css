@@ -1,0 +1,43 @@
+body {
+  --font-color--dark: #edf0f2;
+  --bg-color--dark: #05090c;
+  --fg-color--dark: #111b27;
+  --highlight-color--dark: #63ccff;
+
+  --font-color: var(--font-color--dark);
+  --bg-color: var(--bg-color--dark);
+  --fg-color: var(--fg-color--dark);
+  --highlight-color: var(--highlight-color--dark);
+
+  --navbar-height: 4rem;
+
+  /* For styling buttons, input and etc to maintain consistency*/
+  --component-height: 2.5rem;
+  --component-width: 70%;
+  --component-border-radius: 0.25rem;
+  --component-padding-x: 5%;
+  --component-padding-y: 0.5%;
+
+  --split-video-icon-size: 2.25rem;
+
+  margin: 0;
+  color: var(--font-color);
+  background-color: var(--fg-color);
+
+  font-family: "Quicksand", sans-serif;
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.8rem;
+}
+
+button {
+  font-weight: bolder;
+}
