@@ -1,0 +1,28 @@
+.watch {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 760px) {
+    .watch {
+        flex-direction: column;
+    }
+}
+
+.left {
+    padding: 2vw;
+    padding-left: 5vw;
+    flex: 8;
+}
+
+@media only screen and (max-width: 760px) {
+    .left {
+        padding: 2vw;
+    }
+}
+
+
+.recommendations {
+    flex: 5;
+}

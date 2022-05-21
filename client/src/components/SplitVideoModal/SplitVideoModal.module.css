@@ -1,0 +1,33 @@
+.splitVideoModal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  --top-modal-height: calc(3rem + 5vw);
+  --bottom-modal-height: calc(3rem + 5vw);
+  object-fit: contain;
+}
+
+.text {
+  font-size: 1rem;
+}
+
+.topModal {
+  position: relative;
+  height: var(--top-modal-height);
+  margin-bottom: calc(var(--top-modal-height) * -1);
+
+  background-color: var(--bg-color);
+
+  z-index: 10;
+}
+
+.bottomModal {
+  position: relative;
+
+  z-index: 10;
+  height: var(--bottom-modal-height);
+  margin-top: calc(var(--bottom-modal-height) * -1);
+
+  background-color: var(--bg-color);
+}
