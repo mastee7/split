@@ -5,7 +5,6 @@ import styles from "./SignUp.module.css";
 
 import Logo from "../../components/Logo/Logo";
 import Navbar from "../../components/Navbar/Navbar";
-import UserPool from "../../services/UserPool";
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
@@ -23,12 +22,6 @@ export default function SignUp() {
       return;
     }
 
-    UserPool.signUp(email, password, [], null, (err, data) => {
-      if (err) {
-        console.log(err);
-      }
-      console.log(data);
-    });
   };
 
   return (

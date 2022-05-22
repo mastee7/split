@@ -12,19 +12,29 @@
 }
 
 .splitVideo__controls {
-    position: relative;
+    position: absolute;
+
     display: flex;
     flex-direction: row;
 
     align-items: center;
     justify-content: space-between;
 
-    /* Two steps */
-    margin-bottom: calc(var(--split-video-icon-size) * 1);
-    top: calc(var(--split-video-icon-size) * -1);
+    /* border-color: red;
+    border-style: solid;
+    background: none; */
+
+    top: calc(97.5% - var(--split-video-icon-size));
 
     width: 100%;
     z-index: 999;
+}
+
+.splitVideo__buttons {
+    font-size: 5rem !important;
+    height: 5rem !important;
+    line-height: 5rem !important;
+    width: 5rem !important;
 }
 
 .fullScreen {

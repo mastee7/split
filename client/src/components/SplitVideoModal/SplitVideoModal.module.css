@@ -1,11 +1,14 @@
 .splitVideoModal {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 100%;
 
-  --top-modal-height: calc(3rem + 5vw);
-  --bottom-modal-height: calc(3rem + 5vw);
-  object-fit: contain;
+  --top-modal-height: calc(25%);
+  --bottom-modal-height: calc(25%);
 }
 
 .text {
@@ -13,21 +16,54 @@
 }
 
 .topModal {
-  position: relative;
-  height: var(--top-modal-height);
-  margin-bottom: calc(var(--top-modal-height) * -1);
+  position: absolute;
 
+  width: 100%;
+  height: var(--top-modal-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   background-color: var(--bg-color);
+  object-fit: cover;
+  /* background: none;
+  border-style: solid;
+  border-color: red; */
 
   z-index: 10;
 }
 
 .bottomModal {
-  position: relative;
+  position: absolute;
 
   z-index: 10;
+  width: 100%;
   height: var(--bottom-modal-height);
-  margin-top: calc(var(--bottom-modal-height) * -1);
+  top: calc(100% - var(--bottom-modal-height));
+
+  margin: 0 auto;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 
   background-color: var(--bg-color);
+  object-fit: cover;
+  /* background: none;
+  border-style: solid;
+  border-color: aqua; */
+
+}
+
+.coverModal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--bg-color);
+  object-fit: cover;
+  /* background: none;
+  border-style: solid;
+  border-color: red; */
 }

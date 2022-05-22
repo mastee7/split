@@ -30,7 +30,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: calc(1rem + 0.75vw);
+  font-size: calc(1rem + 0.5vw);
   font-weight: bold;
   flex: 1;
   margin-bottom: 1em;
@@ -44,6 +44,7 @@
 }
 
 .about__header__video {
+  width: 95%;
   max-width: 45rem;
   object-fit: contain;
   flex: 3;

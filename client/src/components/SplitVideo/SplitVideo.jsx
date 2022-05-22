@@ -14,7 +14,8 @@ import SplitVideoModal from "../SplitVideoModal/SplitVideoModal";
 export default function SplitVideo() {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [isModal, setIsModal] = useState(false);
+
+  const [isModal, setIsModal] = useState(true);
 
   const videoRef = useRef();
   const fullScreen = useFullScreenHandle();
@@ -48,7 +49,7 @@ export default function SplitVideo() {
       <div className={styles.splitVideo}>
         {/* Muted for testing, sound is driving me nuts */}
         {/* Change it back later */}
-        <SplitVideoModal topModalText="Hi" bottomModalText="Bye">
+        <SplitVideoModal topModalText="Hi" bottomModalText="Bye" isVisible={isModal}>
           <video
             ref={videoRef}
             width="100%"
