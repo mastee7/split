@@ -3,9 +3,11 @@ import Navbar from "../../components/Navbar/Navbar";
 import SplitVideo from "../../components/SplitVideo/SplitVideo";
 import styles from "./About.module.css";
 
+
 // Can be improved in the future
 // It should be easier to make when I have a greater grasp of what I'm making
 export default function About() {
+
   return (
     <div>
       <Navbar />

@@ -20,15 +20,14 @@ export default function SplitVideo() {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?"
-    ]
-    
-  }
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?",
+    ],
+  };
 
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
-  const [isModal, setIsModal] = useState(true);
+  const [isModal, setIsModal] = useState(false);
 
   const videoRef = useRef();
   const fullScreen = useFullScreenHandle();
@@ -61,6 +60,7 @@ export default function SplitVideo() {
       <div className={styles.splitVideo}>
         {/* Muted for testing, sound is driving me nuts */}
         {/* Change it back later */}
+        {/* onEnded is temporary functionality */}
         <SplitVideoModal question={sampleQuestion} isVisible={isModal}>
           <video
             ref={videoRef}
@@ -69,6 +69,7 @@ export default function SplitVideo() {
             onClick={handlePause}
             onDoubleClick={handleFullscreen}
             onTimeUpdate={handleTime}
+            onEnded={() => setIsModal(true)}
             muted
           >
             <source

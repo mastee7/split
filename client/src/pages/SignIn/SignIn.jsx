@@ -13,6 +13,8 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // If user succeeds in logging in, redirect to homepage
+    window.location.href = "/";
   };
   
   return (
