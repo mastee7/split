@@ -7,11 +7,6 @@ import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import Watch from "./pages/Watch/Watch";
 
-import Amplify from "aws-amplify";
-import awsconfig from "./aws-exports";
-
-Amplify.configure(awsconfig);
-
 function App() {
   return (
     <div>

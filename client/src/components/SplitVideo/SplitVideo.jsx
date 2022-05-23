@@ -12,6 +12,19 @@ import SplitVideoButton from "../SplitVideoButton/SplitVideoButton";
 import SplitVideoModal from "../SplitVideoModal/SplitVideoModal";
 
 export default function SplitVideo() {
+  // Only for testing, take it out in production
+  const sampleQuestion = {
+    question: "What is Loveneet's real name?",
+    answers: [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aspernatur! Illum commodi cupiditate rem nostrum, dolore incidunt neque recusandae nobis voluptatibus ipsam. Deleniti debitis consequatur consectetur, dolorum et quos perspiciatis?"
+    ]
+    
+  }
+
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -22,7 +35,6 @@ export default function SplitVideo() {
 
   const handleTime = () => {
     let currentTime = videoRef.current.currentTime;
-    console.log(currentTime);
   };
 
   //   could use functional programming to shorten code
@@ -49,7 +61,7 @@ export default function SplitVideo() {
       <div className={styles.splitVideo}>
         {/* Muted for testing, sound is driving me nuts */}
         {/* Change it back later */}
-        <SplitVideoModal topModalText="Hi" bottomModalText="Bye" isVisible={isModal}>
+        <SplitVideoModal question={sampleQuestion} isVisible={isModal}>
           <video
             ref={videoRef}
             width="100%"

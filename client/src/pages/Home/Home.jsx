@@ -14,7 +14,7 @@ export default function Home() {
         <Sidebar />
         <div className={styles.thumbnailSection}>
           {videos.map((index, e) => (
-            <VideoThumbnail key={index} title="Baby falls into toilet and then farts" url="bonk"/>
+            <VideoThumbnail id={index} title="Baby falls into toilet and then farts" url="bonk"/>
           ))}
         </div>
       </div>
