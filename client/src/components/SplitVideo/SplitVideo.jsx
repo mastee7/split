@@ -36,7 +36,6 @@ export default function SplitVideo() {
     let currentTime = videoRef.current.currentTime;
   };
 
-  //   could use functional programming to shorten code
   const handlePause = () => {
     setIsPaused(!isPaused);
   };
