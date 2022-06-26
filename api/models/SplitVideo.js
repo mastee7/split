@@ -9,7 +9,8 @@ const SplitVideoSchema = new mongoose.Schema({
   trailer: { type: String },
   video: { type: String },
   year: { type: String },
-  genere: { type: String },
+  genre: { type: String },
+  questionPool: { type: Array },
 });
 
 module.exports = mongoose.model("SplitVideo", SplitVideoSchema);

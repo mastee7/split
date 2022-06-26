@@ -24,6 +24,10 @@ export default function SplitVideo() {
     ],
   };
 
+  const [videoURL, setVideoURL] = useState(
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+  );
+  
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -71,10 +75,7 @@ export default function SplitVideo() {
             onEnded={() => setIsModal(true)}
             muted
           >
-            <source
-              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-              type="video/mp4"
-            />
+            <source src={videoURL} type="video/mp4" />
           </video>
         </SplitVideoModal>
 
