@@ -1,0 +1,170 @@
+.link {
+  display: flex;
+  cursor: pointer;
+
+  color: var(--font-color);
+
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 0.875em;
+  font-weight: 700;
+  transition: all 150ms;
+}
+
+@media only screen and (max-width: 760px) {
+  .link {
+    display: none;
+  }
+}
+
+.link:hover {
+  color: var(--highlight-color);
+}
+
+.link__icon {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.login {
+  display: flex;
+
+  align-items: center;
+
+  color: var(--highlight-color);
+
+  padding-left: 0.5rem;
+  padding-right: 0.75rem;
+
+  border-width: 0.0625rem;
+  border-style: solid;
+  border-color: var(--highlight-color);
+  border-radius: 0.25rem;
+
+  height: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+
+  transition: all 150ms;
+}
+
+.login:hover {
+  background-color: var(--highlight-color);
+  color: white;
+}
+
+@media only screen and (max-width: 760px) {
+  .login {
+    display: none;
+  }
+}
+
+/* What was overriding it??? I dunno but this is a bandaid fix.
+  Figure this out, Noel */
+.icon {
+  display: none !important;
+}
+
+@media only screen and (max-width: 760px) {
+  .icon {
+    display: flex !important;
+    margin-right: 5vw;
+    cursor: pointer;
+  }
+}
+
+/* Logged in */
+.profileBar {
+  position: relative;
+  display: flex;
+
+  flex-direction: row;
+
+  cursor: pointer;
+}
+
+.profilePic {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+
+  filter: brightness(1);
+  transition: filter 150ms;
+}
+
+.profilePic:hover {
+  filter: brightness(1.05);
+}
+
+.profileName {
+  margin-left: 1rem;
+}
+
+.profileName:hover {
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+.dropdownMenu {
+  display: none;
+  position: absolute;
+
+  flex-direction: column;
+
+  --width: 15rem;
+  width: var(--width);
+
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 0.05rem;
+  border-color: var(--highlight-color);
+
+  background-color: var(--fg-color);
+
+  top: calc(100% + 1rem);
+  right: -1vw;
+  left: auto;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 150ms;
+}
+
+.profileBar:focus > .dropdownMenu, .dropdownMenu:hover {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media only screen and (max-width: 760px) {
+  .dropdownMenu {
+    display: none;
+  }
+}
+
+.dropdownMenu__item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  margin: 0.75rem;
+
+  border-radius: 0.25rem;
+
+  background-color: var(--fg-color);
+
+  width: auto;
+  font-weight: bold;
+  font-size: 0.9rem;
+  filter: brightness(1);
+  transition: filter 150ms;
+}
+
+.dropdownMenu__item:hover {
+  filter: brightness(1.5);
+}
+
+.dropdownMenu__text {
+  margin-left: 1rem;
+}

@@ -1,0 +1,32 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  display: flex-start;
+}
+
+.thumbnailSection {
+  display: grid;
+  padding: 1rem;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media only screen and (max-width: 760px) {
+    .thumbnailSection {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  
+@media only screen and (max-width: 620px) {
+    .thumbnailSection {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  
+@media only screen and (max-width: 420px) {
+    .thumbnailSection {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
