@@ -75,6 +75,25 @@
   margin-bottom: 5rem;
 }
 
+.about__thankList {
+  display: flex;
+  flex-direction: column;
+
+  padding: 5rem 0;
+  align-items: center;
+  text-align: center;
+
+  font-size: 0.9rem;
+  font-weight: bolder;
+
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 0.5rem;
+  background-color: var(--bg-color);
+
+  margin-bottom: 5rem;
+}
+
 @media only screen and (max-width: 760px) {
   .about__mailingList {
     background-color: var(--fg-color);

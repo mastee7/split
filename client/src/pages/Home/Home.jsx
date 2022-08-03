@@ -5,7 +5,12 @@ import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import VideoThumbnail from "../../components/VideoThumbnail/VideoThumbnail";
 
+import { AuthContext } from "../../context/authContext/AuthContext";
+import { useContext } from "react";
+
 export default function Home() {
+  const {user} = useContext(AuthContext);
+  
   let videos = Array.apply(null, Array(30)).map(function () {})
   return (
     <div>
@@ -14,7 +19,8 @@ export default function Home() {
         <Sidebar />
         <div className={styles.thumbnailSection}>
           {videos.map((index, e) => (
-            <VideoThumbnail id={index} title="Baby falls into toilet and then farts" url="bonk"/>
+            // Added a key
+            <VideoThumbnail key={index} title="Baby falls into toilet and then farts" url="bonk"/>
           ))}
         </div>
       </div>

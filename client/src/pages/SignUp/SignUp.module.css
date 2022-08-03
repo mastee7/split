@@ -83,3 +83,8 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.errorMessage {
+  font-size: 0.8rem;
+  color: var(--error-color);
+}

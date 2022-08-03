@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./VideoThumbnail.module.css";
+import styles from "./RecommendationThumbnail.module.css";
 
-export default function VideoThumbnail({ title, url }) {
+export default function RecommendationThumbnail({ title, url, setUrlChanged }) {
   // Some error handling that probably won't be needed
   return (
-    <Link to={'/watch?v=' + url}>
+    <Link to={"/watch?v=" + url} onClick={(event) => setUrlChanged(true)}>
       <div className={styles.videoThumbnail}>
         <img
           className={styles.image}
@@ -14,13 +14,6 @@ export default function VideoThumbnail({ title, url }) {
         />
 
         <span className={styles.belowImage}>
-          <span className={styles.profilePic__wrapper}>
-            <img
-              className={styles.profilePic}
-              src="https://i.redd.it/fxuxmdraj0941.jpg"
-              alt=""
-            />
-          </span>
           <div className={styles.description}>
             <div className={styles.title}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos enim

@@ -24,6 +24,7 @@
 
 .link__icon {
   margin-right: 0.5rem;
+  cursor: pointer;
 }
 
 .login {
@@ -71,4 +72,99 @@
     margin-right: 5vw;
     cursor: pointer;
   }
+}
+
+/* Logged in */
+.profileBar {
+  position: relative;
+  display: flex;
+
+  flex-direction: row;
+
+  cursor: pointer;
+}
+
+.profilePic {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+
+  filter: brightness(1);
+  transition: filter 150ms;
+}
+
+.profilePic:hover {
+  filter: brightness(1.05);
+}
+
+.profileName {
+  margin-left: 1rem;
+}
+
+.profileName:hover {
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+.dropdownMenu {
+  display: none;
+  position: absolute;
+
+  flex-direction: column;
+
+  --width: 15rem;
+  width: var(--width);
+
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 0.05rem;
+  border-color: var(--highlight-color);
+
+  background-color: var(--fg-color);
+
+  top: calc(100% + 1rem);
+  right: -1vw;
+  left: auto;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 150ms;
+}
+
+.profileBar:focus > .dropdownMenu, .dropdownMenu:hover {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media only screen and (max-width: 760px) {
+  .dropdownMenu {
+    display: none;
+  }
+}
+
+.dropdownMenu__item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  margin: 0.75rem;
+
+  border-radius: 0.25rem;
+
+  background-color: var(--fg-color);
+
+  width: auto;
+  font-weight: bold;
+  font-size: 0.9rem;
+  filter: brightness(1);
+  transition: filter 150ms;
+}
+
+.dropdownMenu__item:hover {
+  filter: brightness(1.5);
+}
+
+.dropdownMenu__text {
+  margin-left: 1rem;
 }

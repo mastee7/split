@@ -16,11 +16,12 @@ body {
   --fg-color: var(--fg-color--dark);
   --highlight-color: var(--highlight-color--dark);
 
-  /* --font-color: var(--font-color--dark);
-  --bg-color: var(--bg-color--dark);
-  --fg-color: var(--fg-color--dark);
-  --highlight-color: var(--highlight-color--dark); */
+  /* --font-color: var(--font-color--light);
+  --bg-color: var(--bg-color--light);
+  --fg-color: var(--fg-color--light);
+  --highlight-color: var(--highlight-color--light); */
 
+  --error-color: #da4e40;
   --navbar-height: 4rem;
 
   /* For styling buttons, input and etc to maintain consistency*/

@@ -6,15 +6,22 @@ import styles from "./SignIn.module.css";
 import Logo from "../../components/Logo/Logo";
 import Navbar from "../../components/Navbar/Navbar";
 
+import { AuthContext } from "../../context/authContext/AuthContext";
+import { login } from "../../context/authContext/apiCalls";
+
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const {isFetching, dispatch} = useContext(AuthContext);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // If user succeeds in logging in, redirect to homepage
-    window.location.href = "/";
+    const res = await login({ email, password }, dispatch);
+    
+    if (res === null) setError("Incorrect email or password")
+    else window.location.href = "/";
   };
   
   return (
@@ -23,7 +30,6 @@ export default function SignIn() {
       <div className={styles.signIn}>
         <form className={styles.container} onSubmit={handleSubmit}>
           <Logo style={styles.logo} />
-
           {/* Email input */}
           <label className={styles.label}>Email</label>
           <input
@@ -46,9 +52,13 @@ export default function SignIn() {
 
           <button
             className={`${styles.component} ${styles.button}`}
+            disabled={isFetching}
           >
             Sign in
           </button>
+
+          {/* Error message */}
+          <text className={styles.errorMessage}>{error}</text>
 
           <div className={styles.subtext}>
             <span className={styles.subtext__link}>
@@ -59,6 +69,7 @@ export default function SignIn() {
               <span className={styles.subtext__link}>Sign up</span>
             </Link>
           </div>
+
         </form>
       </div>
     </div>

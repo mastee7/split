@@ -79,3 +79,9 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.errorMessage{
+  color: var(--error-color);
+  font-size: 0.8rem;
+  padding-bottom: 2.5%;
+}
