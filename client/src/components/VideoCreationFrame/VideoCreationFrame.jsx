@@ -1,5 +1,10 @@
-import { useCallback, useState } from 'react';
-import ReactFlow, { applyEdgeChanges, applyNodeChanges } from 'react-flow-renderer';
+import { useCallback, useState, useMemo } from "react";
+import ReactFlow, {
+  addEdge,
+  applyEdgeChanges,
+  applyNodeChanges,
+} from "react-flow-renderer";
+import VideoNode from "../VideoNode/VideoNode";
 
 import styles from "./VideoCreationFrame.module.css";
 
@@ -8,30 +13,14 @@ import styles from "./VideoCreationFrame.module.css";
 //
 const initialNodes = [
   {
-    id: "1",
-    type: "input",
-    data: { label: "Input Node" },
-    position: { x: 250, y: 25 },
-  },
-
-  {
-    id: "2",
-    // you can also pass a React component as a label
-    data: { label: <div>Default Node</div> },
-    position: { x: 100, y: 125 },
-  },
-  {
-    id: "3",
-    type: "output",
-    data: { label: "Output Node" },
-    position: { x: 250, y: 250 },
+    id: "node-1",
+    type: "videoNode",
+    position: { x: 0, y: 0 },
+    data: { value: 123 },
   },
 ];
 
-const initialEdges = [
-  { id: "e1-2", source: "1", target: "2" },
-  { id: "e2-3", source: "2", target: "3", animated: true },
-];
+const initialEdges = [];
 //
 //
 // TEST
@@ -50,6 +39,12 @@ export default function VideoCreationFrame() {
     (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
     [setEdges]
   );
+  const onConnect = useCallback(
+    (connection) => setEdges((eds) => addEdge(connection, eds)),
+    [setEdges]
+  );
+
+  const nodeTypes = useMemo(() => ({ videoNode: VideoNode }), []);
   //
   //
   // TEST
@@ -57,12 +52,14 @@ export default function VideoCreationFrame() {
   return (
     <div className={styles.root}>
       <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      onNodesChange={onNodesChange}
-      onEdgesChange={onEdgesChange}
-      fitView
-    />
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        nodeTypes={nodeTypes}
+        fitView
+      />
     </div>
   );
 }

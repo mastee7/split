@@ -53,7 +53,7 @@
 
 .input {
   border-style: solid;
-  border-width: 0.0625rem;
+  border-width: var(--component-border-width);
   background: none;
   color: var(--font-color);
 }

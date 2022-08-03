@@ -1,0 +1,69 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  width: 5rem;
+  height: 5rem;
+}
+
+.block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: none;
+  color: var(--font-color);
+  border-style: solid;
+  border-width: var(--component-border-width);
+  border-radius: var(--component-border-radius);
+
+  padding: 1rem;
+  font-size: 0.5rem;
+}
+
+.topBlock {
+  background-color: var(--fg-color);
+}
+
+.input {
+  display: none;
+}
+
+.fileUpload {
+  display: flex;
+  flex-direction: column;
+
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: 0.4rem;
+
+  align-items: center;
+  justify-content: center;
+
+  border-style: solid;
+  border-width: var(--component-border-width);
+  border-radius: var(--component-border-radius);
+
+  width: 5rem;
+  height: 5rem;
+
+  cursor: pointer;
+}
+
+.delete {
+  position: absolute;
+  top: -10%;
+  left: -1rem;
+
+  background-color: var(--fg-color);
+  color: var(--font-color);
+
+  border-style: solid;
+  border-width: var(--component-border-width);
+  border-radius: var(--component-border-radius);
+
+  width: 1rem;
+  height: 1rem;
+}
