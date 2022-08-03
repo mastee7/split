@@ -1,0 +1,4 @@
+.root {
+    height: calc(100vh - var(--navbar-height));
+    object-fit: cover;
+}
