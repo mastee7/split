@@ -32,9 +32,9 @@ export default function Status() {
               e.target.src="https://i.ibb.co/37YHLK3/profile-pic.png"
             }}
           ></img>
-          <text className={`${styles.link} ${styles.profileName}`}>
+          <div className={`${styles.link} ${styles.profileName}`}>
             {user.username}
-          </text>
+          </div>
 
           {/* Dropdown menu */}
           <div className={styles.dropdownMenu}>
@@ -42,14 +42,14 @@ export default function Status() {
             {window.location.href !== "http://localhost:3000/profile" && (
               <Link className={styles.dropdownMenu__item} to="/profile">
                 <AccountCircleOutlinedIcon />
-                <text className={styles.dropdownMenu__text}>View Profile</text>
+                <div className={styles.dropdownMenu__text}>View Profile</div>
               </Link>
             )}
 
             {/* Logout item */}
             <span className={styles.dropdownMenu__item} onClick={handleLogout}>
               <LogoutIcon />
-              <text className={styles.dropdownMenu__text}>Sign out</text>
+              <div className={styles.dropdownMenu__text}>Sign out</div>
             </span>
           </div>
         </div>
