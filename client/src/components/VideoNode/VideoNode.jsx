@@ -6,7 +6,7 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 import styles from "./VideoNode.module.css";
 
-export default function VideoNode() {
+export default function VideoNode({nodeId,}) {
   const [question, setQuestion] = useState("");
   const [answers, setAnswers] = useState(["hi", "", ""]);
 
@@ -40,14 +40,18 @@ export default function VideoNode() {
           {/* This is hard coded because, I hate this project and I wanna move on to sth else */}
           <label>Answers</label>
           <input className={styles.questionInput}></input>
-          <Handle type="source" style={{ top: 0 }} position={Position.Right} />
+          <Handle
+            id="a"
+            style={{ top: 0 }}
+            position={Position.Right}
+          />
 
           <input className={styles.questionInput}></input>
-          <Handle type="source" position={Position.Right} />
+          <Handle id="b" position={Position.Right} />
 
           <input className={styles.questionInput}></input>
           <Handle
-            type="source"
+            id="c"
             style={{ top: "100%" }}
             position={Position.Right}
           />
