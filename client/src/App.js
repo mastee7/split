@@ -8,9 +8,9 @@ import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import Watch from "./pages/Watch/Watch";
 import Profile from "./pages/Profile/Profile";
+import VideoCreation from "./pages/VideoCreation/VideoCreation";
 
 import { AuthContext } from "./context/authContext/AuthContext";
-import VideoCreation from "./pages/VideoCreation/VideoCreation";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -24,7 +24,7 @@ function App() {
         <Route path="/signup" element={user ? <Home /> : <SignUp />} />
         <Route path="/watch" element={<Watch />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/create" element={<VideoCreation />} />
+        <Route path="/create" element={user? <VideoCreation /> : <Home/>} />
       </Routes>
     </div>
   );

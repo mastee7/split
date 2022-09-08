@@ -11,6 +11,18 @@ const SplitVideoSchema = new mongoose.Schema({
   video: { type: String },
   year: { type: String },
   genre: { type: String },
+  videoNodes: [
+    {
+      videoUrl: { type: String, required: true },
+      question: { type: String, required: true },
+      answer: [
+        {
+          text: { type: String, required: true },
+          nextNode: { type: String, required: true },
+        },
+      ],
+    },
+  ],
 });
 
 module.exports = mongoose.model("SplitVideo", SplitVideoSchema);

@@ -20,6 +20,8 @@ export default function Watch() {
         <div className={styles.left}>
           <div className={styles.video}>
             <SplitVideo />
+            <div className={styles.title}>Loveneet kills squirrels</div>
+            <div className={styles.description}>Description</div>
           </div>
         </div>
           

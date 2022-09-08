@@ -1,4 +1,81 @@
 .root {
-    height: calc(100vh - var(--navbar-height));
-    object-fit: cover;
+  height: calc(100vh - var(--navbar-height));
+  object-fit: cover;
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+}
+
+.videoCreation__plusButton {
+  position: absolute;
+  border-radius: 50%;
+  margin: 1rem;
+  width: 3rem;
+  aspect-ratio: 1/1;
+
+  font-size: xx-large;
+
+  background-color: var(--highlight-color);
+  color: var(--font-color);
+
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+.videoCreation__plusButton:hover {
+  filter: brightness(0.95);
+}
+
+.videoCreation__plusButton:active {
+  filter: brightness(0.9);
+}
+
+.videoCreation__upload {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--component-border-radius);
+  object-fit: cover;
+  max-width: 25vw;
+  background-color: var(--bg-color);
+  margin: 1rem;
+}
+
+.videoCreation__thumbnail {
+  width: 100%;
+  aspect-ratio: 5/4;
+
+  border-radius: var(--component-border-radius);
+}
+
+.videoCreation__uploadButton {
+  padding-left: var(--component-padding-x);
+  padding-right: var(--component-padding-x);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  margin: 1rem;
+
+  background-color: var(--bg-color);
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
+
+  border-style: solid;
+  border-width: 0.0625rem;
+  border-radius: var(--component-border-radius);
+
+  z-index: 10;
+
+  cursor: pointer;
+}
+
+.videoCreation__uploadButton:hover {
+  background-color: var(--highlight-color);
+  color: var(--font-color);
 }

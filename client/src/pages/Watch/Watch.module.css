@@ -1,37 +1,46 @@
 .watch {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 760px) {
-    .watch {
-        flex-direction: column;
-    }
+  .watch {
+    flex-direction: column;
+  }
 }
 
 .left {
-    padding: 2vw;
-    padding-left: 5vw;
-    flex: 2;
+  padding: 2vw;
+  padding-left: 5vw;
+  flex: 2;
 }
 
 @media only screen and (max-width: 760px) {
-    .left {
-        padding: 2.5vw;
-    }
+  .left {
+    padding: 2.5vw;
+  }
 }
 
 .recommendations {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding-left: 0;
-    padding-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 0;
+  padding-top: 2vw;
 }
 
 @media only screen and (max-width: 760px) {
-    .recommendations {
-        margin-left: 2.75vw;
-    }
+  .recommendations {
+    margin-left: 2.75vw;
+  }
+}
+
+.title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.description {
+    font-size: medium;
 }

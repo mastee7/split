@@ -10,6 +10,9 @@ const emailRoute = require("./routes/emailList");
 
 dotenv.config();
 
+const SplitVideo = require("./models/SplitVideo");
+console.log(new SplitVideo());
+
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
