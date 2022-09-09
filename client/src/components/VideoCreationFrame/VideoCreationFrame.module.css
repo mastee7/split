@@ -79,3 +79,22 @@
   background-color: var(--highlight-color);
   color: var(--font-color);
 }
+
+.videoCreation__input {
+  z-index: 15;
+}
+
+.videoCreation__fileUpload {
+  display: flex;
+  flex-direction: column;
+
+  object-fit: cover;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 0.4rem;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}

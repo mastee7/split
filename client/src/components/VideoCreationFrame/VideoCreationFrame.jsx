@@ -11,6 +11,8 @@ import VideoNode from "../VideoNode/VideoNode";
 import styles from "./VideoCreationFrame.module.css";
 
 export default function VideoCreationFrame() {
+  const [thumbnail, setThumbnail] = useState(null);
+
   const onEdgeUpdateStart = useCallback(() => {
     edgeUpdateSuccessful.current = false;
   }, []);
@@ -28,6 +30,10 @@ export default function VideoCreationFrame() {
     edgeUpdateSuccessful.current = true;
   }, []);
 
+  const handleThumbnail = (e) => {
+    setThumbnail(e.target.files[0]);
+  };
+
   function deleteNode(nodeId) {
     setNodes((arr) => {
       return arr.filter((value) => {
@@ -35,6 +41,19 @@ export default function VideoCreationFrame() {
       });
     });
     console.log("DELETE");
+  }
+
+  const updateNodeData = (nodeId, nodeData) => {
+    setNodes((arr)=> {
+      let items = [...arr];
+      for (let i = 0; i < items.length(); i++)
+      {
+        if (items[i] ==- nodeId) items[i].nodeData = nodeData;
+      }
+      console.log(items);
+      return items;
+    });
+    console.log("UPDATED DATA");
   }
 
   //TEMP
@@ -45,7 +64,7 @@ export default function VideoCreationFrame() {
         id: index.toString(),
         type: "videoNode",
         position: { x: 0, y: 0 },
-        data: { deleteNode },
+        data: { deleteNode, updateNodeData }
       },
     ]);
     setIndex(index + 1);
@@ -60,7 +79,7 @@ export default function VideoCreationFrame() {
   const [index, setIndex] = useState(1);
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-  
+
   const onConnect = useCallback((params) => {
     setEdges((arr) => {
       return arr.filter((value) => {
@@ -70,7 +89,7 @@ export default function VideoCreationFrame() {
         );
       });
     });
-    params.type = 'smoothstep'
+    params.type = "smoothstep";
     setEdges((els) => addEdge(params, els));
     console.log(params);
     console.log(edges);
@@ -100,13 +119,25 @@ export default function VideoCreationFrame() {
         attributionPosition="top-right"
       >
         <div className={styles.videoCreation__upload}>
-          <img className={styles.videoCreation__thumbnail} src="https://media-dspp-driveds.dsautomobiles.com/image/47/0/.30470.119.jpg"/>
+          <label className={styles.videoCreation__fileUpload}>
+            {thumbnail && (
+              <img
+                className={styles.videoCreation__thumbnail}
+                src={URL.createObjectURL(thumbnail)}
+              />
+            )}
+            <input
+              className={styles.videoCreation__input}
+              name="text"
+              type="file"
+              onChange={handleThumbnail}
+            />
+          </label>
           <button className={styles.videoCreation__uploadButton}>Upload</button>
         </div>
         <button className={styles.videoCreation__plusButton} onClick={addNode}>
           +
         </button>
-        <Controls />
       </ReactFlow>
     </div>
   );
