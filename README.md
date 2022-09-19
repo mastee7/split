@@ -28,7 +28,7 @@ Split will be a video streaming website that gives users the ability to create i
 <h2>✨ Preview  </h2>
 
 ![image](https://user-images.githubusercontent.com/84760072/191125892-e2f929e9-73cd-4a4c-8f74-ac0bb75af0f7.png)
-![ezgif-2-9f0e38ad25](https://user-images.githubusercontent.com/84760072/191126279-bf58528a-91f7-41fd-a9a6-8843007b1d78.gif)
+![final_6328e57adea294006c8b0345_776424](https://user-images.githubusercontent.com/84760072/191126874-20b295cd-d6ed-4c1a-a658-debebec07d70.gif)
 
 
 <h2>🥞 Tech Stack</h2>
